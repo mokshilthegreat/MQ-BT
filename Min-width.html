@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Min-Width Responsive Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+/* Mobile First */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+}
+
+.box{
+    width:100%;
+    background:#4CAF50;
+    color:white;
+    text-align:center;
+    padding:50px;
+    font-size:25px;
+    border-radius:10px;
+}
+
+/* Tablet (768px and above) */
+@media (min-width:768px){
+    .box{
+        width:calc(50% - 10px);
+    }
+}
+
+/* Laptop/Desktop (992px and above) */
+@media (min-width:992px){
+    .box{
+        width:calc(33.33% - 14px);
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media (min-width:1200px){
+    .box{
+        width:calc(25% - 15px);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="box">Column 1</div>
+    <div class="box">Column 2</div>
+    <div class="box">Column 3</div>
+    <div class="box">Column 4</div>
+    <div class="box">Column 5</div>
+    <div class="box">Column 6</div>
+    <div class="box">Column 7</div>
+    <div class="box">Column 8</div>
+</div>
+
+</body>
+</html>
