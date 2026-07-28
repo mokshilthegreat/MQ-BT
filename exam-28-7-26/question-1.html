@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar </title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+        }
+
+       
+        nav{
+            background:#222;
+        }
+
+        .menu{
+            display:flex;
+            justify-content:center;
+            list-style:none;
+        }
+
+        .menu li{
+            position:relative;
+        }
+
+        .menu li a{
+            display:block;
+            color:white;
+            padding:18px 25px;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .menu li a:hover{
+            background:#ff9800;
+        }
+
+        .submenu{
+            position:absolute;
+            top:100%;
+            left:0;
+            background:#333;
+            list-style:none;
+            min-width:180px;
+            display:none;
+        }
+
+        .submenu li{
+            width:100%;
+        }
+
+        .submenu li a{
+            padding:15px;
+        }
+
+      
+        .dropdown:hover .submenu{
+            display:block;
+        }
+
+    
+        @media (max-width:768px){
+
+            .menu{
+                flex-direction:column;
+                width:100%;
+            }
+
+            .menu li{
+                width:100%;
+            }
+
+            .menu li a{
+                border-bottom:1px solid #444;
+            }
+
+      
+            .submenu{
+                position:static;
+                width:100%;
+                background:#444;
+                display:none;
+            }
+
+            .dropdown:hover .submenu{
+                display:block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="menu">
+
+            <li><a href="#">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Services ▼</a>
+
+                <ul class="submenu">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">SEO</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+
+</body>
+</html>
